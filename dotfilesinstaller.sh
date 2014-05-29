@@ -1,12 +1,14 @@
 #!/bin/sh
-if [ $OSTYPE == "darwin"* ]; then
+os=${OSTYPE//[0-9.]/}
+if [ $os == "darwin" ]; then
 	dir=~/Documents/CS/dotconfigfiles
 else
 	dir=~/Documents/dotconfigfiles
 fi
-if [ $OSTYPE == "darwin"* ]; then
+
+if [ $os == "darwin" ]; then
 	files="bashrcmac vimrc profile"
-elif [ $OSTYPE == "linux" ]; then
+elif [ $os == "linux" ]; then
 	files="bashrcsuse vimrc"
 else
 	files="bashrcmac vimrc"
@@ -18,11 +20,11 @@ echo "changed directory..."
 
 
 for file in $files; do
-  if [ $file == "bashrcsuse" ] && [ $OSTYPE == "linux" ]; then
-    echo "detected OStype as $OSTYPE, moving $file into bashrc"
+  if [ $file == "bashrcsuse" ] && [ $os == "linux" ]; then
+    echo "detected OStype as $os, moving $file into bashrc"
     file="bashrc"
-  elif [ $file == "bashrcmac" ] && [ $OSTYPE == "darwin"* ]; then
-    echo "detected OStype as $OSTYPE, moving $file into bashrc"
+  elif [ $file == "bashrcmac" ] && [ $os == "darwin" ]; then
+    echo "detected OStype as $os, moving $file into bashrc"
     file="bashrc"
   fi
 	echo "symlinking from directory"
