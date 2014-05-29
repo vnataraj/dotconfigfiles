@@ -1,6 +1,6 @@
 #plugin installer/updater for all current plugins
 home=~/Documents/dotconfigfiles
-plugins="https://github.com/ervandew/supertab.git https://github.com/scrooloose/syntastic.git https://github.com/bling/vim-airline.git https://github.com/tpope/vim-fugitive.git"
+plugins="https://github.com/ervandew/supertab.git https://github.com/scrooloose/syntastic.git https://github.com/bling/vim-airline.git https://github.com/tpope/vim-fugitive.git https://github.com/altercation/vim-colors-solarized.git"
 
 #install pathogen if it doesn't exist already
 
