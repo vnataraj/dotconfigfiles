@@ -27,3 +27,5 @@
 
 test -s ~/.alias && . ~/.alias || true
 alias sshcs="sshfs vnataraj@pod2-4.cs.purdue.edu:/u/u87/vnataraj ~/CS/"
+
+ls --color=auto
