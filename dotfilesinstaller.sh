@@ -7,11 +7,11 @@ else
 fi
 
 if [ $os == "darwin" ]; then
-	files="bashrcmac vimrc profile"
+	files="bashrcmac vimrc profile tmux.conf"
 elif [ $os == "linux" ]; then
-	files="bashrcsuse vimrc"
+	files="bashrcsuse vimrc tmux.conf"
 else
-	files="bashrcmac vimrc"
+	files="bashrcmac vimrc tmux.conf"
 fi
 
 echo "Changing to directory where dotfiles are stored"
@@ -29,6 +29,7 @@ for file in $files; do
   else
     filetomove=$file
   fi
+
   if [ -e ~/.$filetomove ]; then
     echo "~/.$filetomove already exists!"
     while true; do
