@@ -39,7 +39,7 @@ for file in $files; do
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
-  done
+    done
   fi
 	echo "symlinking from directory"
 	ln -s $dir/$file ~/.$filetomove
