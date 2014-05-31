@@ -23,14 +23,36 @@ for file in $files; do
   if [ $file == "bashrcsuse" ] && [ $os == "linux" ]; then
     echo "detected OStype as $os, moving $file into bashrc"
     filetomove="bashrc"
+    if [ -e ~/.$filetomove ]; then
+     echo "~/.$filetomove already exists!"
+     while true; do
+      read -p "Do you wish to overwrite this file?" yn
+      case $yn in
+        [Yy]* ) rm -rf ~/.$filetomove ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+      esac
+     done
+    fi
   elif [ $file == "bashrcmac" ] && [ $os == "darwin" ]; then
     echo "detected OStype as $os, moving $file into bashrc"
     filetomove="bashrc"
+    if [ -e ~/.$filetomove ]; then
+     echo "~/.$filetomove already exists!"
+     while true; do
+      read -p "Do you wish to overwrite this file?" yn
+      case $yn in
+        [Yy]* ) rm -rf ~/.$filetomove ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+      esac
+     done
+    fi
   else
     filetomove=$file
   fi
 
-  if [ -e ~/.$filetomove ]; then
+  if [ -e ~/"."$filetomove ]; then
     echo "~/.$filetomove already exists!"
     while true; do
     read -p "Do you wish to overwrite this file?" yn

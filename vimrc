@@ -1,5 +1,6 @@
 set nocompatible
 call pathogen#infect()
+"airline stuff
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'wombat'
@@ -11,8 +12,10 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-
-" vim-powerline symbols
+"ctrlp stuff
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"clipboard stuff
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim

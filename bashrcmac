@@ -1,5 +1,6 @@
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 alias pod2-4="sshfs vnataraj@pod2-4.cs.purdue.edu:/u/u87/vnataraj/ ~/Documents/www"
 alias sftp2pod="sftp vnataraj@pod2-4.cs.purdue.edu"
-alias vim=/Applications/MacPorts/MacVim.app/Contents/MacOS/Vim
-alias gvim="open -a MacVim"
+
+
+alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first'
