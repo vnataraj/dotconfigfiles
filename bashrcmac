@@ -1,6 +1,7 @@
 alias pod2-4="sshfs vnataraj@pod2-4.cs.purdue.edu:/u/u87/vnataraj/ ~/Documents/www"
 alias sftp2pod="sftp vnataraj@pod2-4.cs.purdue.edu"
-
+alias please='sudo !!'
 alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first '
+
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
