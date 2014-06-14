@@ -5,3 +5,6 @@ alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-char
 
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
+
+d=.dircolors
+test -r $d && eval "$(gdircolors $d)"

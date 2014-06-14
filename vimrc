@@ -65,6 +65,7 @@ set wildignore+=*.swp,*~,._*
 hi MatchParen cterm=bold ctermbg=darkmagenta ctermfg=white
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
 
+runtime! macros/matchit.vim
 ""OSX stuff  
 if (has("mac") || has("macunix"))
   noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
