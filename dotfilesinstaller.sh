@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 os=${OSTYPE//[0-9.]/}
 if [ $os == "darwin" ]; then
 	dir=~/Documents/CS/dotconfigfiles
@@ -7,11 +7,13 @@ else
 fi
 
 if [ $os == "darwin" ]; then
-	files="bashrcmac vimrc profile tmux.conf"
+	files="bashrcmac vimrc profile tmux.conf bash_profile"
 elif [ $os == "linux" ]; then
-	files="bashrcsuse vimrc tmux.conf"
+	files="bashrcsuse vimrc tmux.conf bash_profile"
+elif [ $os == "linux-gnu" ]; then
+  files="bashrcsuse vimrc tmux.conf bash_profile"
 else
-	files="bashrcmac vimrc tmux.conf"
+	files="bashrcmac vimrc tmux.conf bash_profile"
 fi
 
 echo "Changing to directory where dotfiles are stored"
@@ -21,6 +23,9 @@ echo "changed directory..."
 
 for file in $files; do
   if [ $file == "bashrcsuse" ] && [ $os == "linux" ]; then
+    echo "detected OStype as $os, moving $file into bashrc"
+    filetomove="bashrc"
+  elif [ $file == "bashrcsuse" ] && [ $os == "linux-gnu" ]; then
     echo "detected OStype as $os, moving $file into bashrc"
     filetomove="bashrc"
   elif [ $file == "bashrcmac" ] && [ $os == "darwin" ]; then
