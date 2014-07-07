@@ -41,7 +41,7 @@ for file in $files; do
     read -p "Do you wish to overwrite this file?" yn
     case $yn in
         [Yy]* ) rm -rf ~/.$filetomove ; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
     done
