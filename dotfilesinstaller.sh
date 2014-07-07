@@ -40,13 +40,17 @@ for file in $files; do
     while true; do
     read -p "Do you wish to overwrite this file?" yn
     case $yn in
-        [Yy]* ) rm -rf ~/.$filetomove ; break;;
+        [Yy]* ) rm -rf ~/.$filetomove ; ln -s $dir/$file ~/.$filetomove ; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
     done
+  else
+    echo "symlinking from directory"
+    ln -s $dir/$file ~/.$filetomove
+    echo "symlinked $file successfully!"
   fi
-	echo "symlinking from directory"
-	ln -s $dir/$file ~/.$filetomove
-	echo "symlinked $file successfully"
 done
+
+echo "finished symlinking all config files, exiting now!"
+exit
