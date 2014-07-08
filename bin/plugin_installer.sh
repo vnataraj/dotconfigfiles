@@ -18,7 +18,11 @@ echo "changed directory to ~/.vim/bundle !"
 for plugin in $plugins; do
   echo "cloning into $plugin"
   git clone $plugin
-  echo "cloned $plugin"
+  if [ $? -eq 0 ]; then
+    echo "cloned $plugin!"
+  else
+    echo "could not clone $plugin!"
+  fi
 done
 
 
