@@ -1,7 +1,7 @@
 #!/bin/bash
 
 link=$1
-dir=$1
+dir=$2
 parentscriptdir=`pwd`
 usage= "Usage: ./gitconfiguror REPOSITORY_LINK RELATIVE_PATH_TO_DESIRED_PARENT_DIR\
         NOTE: please do not use this script on existing repositories with established .gitignores"
