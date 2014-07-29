@@ -3,6 +3,7 @@ call pathogen#infect()
 "airline stuff
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 1
 let g:airline_theme = 'wombat'
 set laststatus=2
 let g:airline_enable_branch = 1
@@ -15,6 +16,15 @@ let g:airline_symbols.space = "\ua0"
 "ctrlp stuff
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:tmuxline_preset = {
+  \'a'     :  '#S',
+  \'b'     :  '#W',
+  \'c'     :  '#H',
+  \'win'     :  '#I #W',
+  \'cwin'   : '#I #W',
+  \'x'      : '%a',
+  \'y'      : '#W %R',
+  \'z'      : '#H'}
 "clipboard stuff
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
