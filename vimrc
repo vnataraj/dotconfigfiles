@@ -1,5 +1,23 @@
 set nocompatible
-call pathogen#infect()
+filetype on
+filetype off
+"Vundle stuff
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"plugins here
+Plugin 'gmarik/Vundle.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+call vundle#end()
+filetype plugin indent on
+filetype on
 "airline stuff
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
@@ -21,7 +39,6 @@ let g:tmuxline_preset = {
   \'b'     :  '#W',
   \'c'     :  '#H',
   \'win'     :  '#I #W',
-  \'cwin'   : '#I #W',
   \'x'      : '%a',
   \'y'      : '#W %R',
   \'z'      : '#H'}

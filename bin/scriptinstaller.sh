@@ -34,7 +34,7 @@ else
 fi
 
 for f in $files; do
-  if [ -e $bin/$f ]; then
+  if [ -e $bin/$f@ ]; then
     echo "$f already exists!"
     while true; do
     read -p "Do you wish to overwrite this file?" yn
