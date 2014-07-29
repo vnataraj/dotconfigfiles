@@ -60,6 +60,9 @@ colorscheme jellybeans
 set backspace=2 shiftwidth=2
 set expandtab
 set t_Co=256
+if &term =~ '256color'    
+  set t_ut=
+endif
 set ignorecase
 set foldenable
 set cursorline
