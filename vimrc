@@ -10,11 +10,19 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'https://github.com/eraserhd/vim-ios/'
+Plugin 'lervag/vim-latex'
+Bundle "pangloss/vim-javascript"
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'mattn/gist-vim'
+Plugin 'Keithbsmiley/swift.vim'
 call vundle#end()
 filetype plugin indent on
 filetype on

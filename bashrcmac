@@ -5,9 +5,10 @@ alias dot="cd ~/Documents/CS/dotconfigfiles"
 alias website="cd ~/Documents/CS/vnataraj.github.io"
 alias soa="cd ~/Documents/CS/end-to-end-soa/"
 alias cs="cd ~/Documents/CS/"
+alias resume="cd ~/Documents/CS/resume"
 alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first '
 
-export PATH=/usr/local/bin:~/bin:$PATH
+export PATH=/usr/local/bin:~/bin:/usr/texbin:$PATH
 export CLICOLOR=1
 export JAVA_HOME=$(/usr/libexec/java_home)
 
