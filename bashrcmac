@@ -7,6 +7,7 @@ alias soa="cd ~/Documents/CS/end-to-end-soa/"
 alias cs="cd ~/Documents/CS/"
 alias resume="cd ~/Documents/CS/resume"
 alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first '
+alias mvm="cd ~/Documents/CS/research/"
 
 export PATH=/usr/local/bin:~/bin:/usr/texbin:$PATH
 export CLICOLOR=1
