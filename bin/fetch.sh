@@ -14,7 +14,7 @@ if [ -e ~/Documents/CS/dotconfigfiles/$file ]; then
   echo "found file in dotfiles!"
   echo "attempting to copy now"
   cp ~/Documents/CS/dotconfigfiles/$file $actualdir/.$file
-  if [ $# -eq 0 ]; then
+  if [ $? -eq 0 ]; then
     echo "copied!!"
   else
     echo "sorry, the operation could not be completed at this time."
