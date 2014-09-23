@@ -91,6 +91,7 @@ set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 set smartcase
 set tabstop=2
 set termencoding=utf-8
+set timeoutlen=50
 set viminfo='20,\"500
 set window=29
 
