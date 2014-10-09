@@ -102,7 +102,7 @@ set wildignore+=*.swp,*~,._*
 
 "" highlight brackets
 hi MatchParen cterm=bold ctermbg=darkmagenta ctermfg=white
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 11
 
 runtime! macros/matchit.vim
 ""OSX stuff  

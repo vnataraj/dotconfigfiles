@@ -3,7 +3,7 @@ os=${OSTYPE//[0-9.]/}
 if [ $os == "darwin" ]; then
 	dir=~/Documents/CS/dotconfigfiles
 else
-	dir=~/Documents/dotconfigfiles
+	dir=~/dotconfigfiles
 fi
 
 if [ $os == "darwin" ]; then
