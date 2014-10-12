@@ -10,6 +10,8 @@ alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-char
 alias mvm="cd ~/Documents/CS/research/"
 alias list=' ls; tmux list-sessions '
 alias att='tmux attach-session -t '
+alias new='tmux new-session -s '
+alias ks='tmux kill-session -t '
 
 export PATH=/usr/local/bin:~/bin:/usr/texbin:$PATH
 export CLICOLOR=1
