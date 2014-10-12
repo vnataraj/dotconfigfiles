@@ -4,7 +4,6 @@ filetype off
 "Vundle stuff
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"plugins here
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
@@ -22,7 +21,9 @@ Plugin 'lervag/vim-latex'
 Bundle "pangloss/vim-javascript"
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'mattn/gist-vim'
+Plugin 'tpope/vim-endwise'
 Plugin 'Keithbsmiley/swift.vim'
+Plugin 'microvm/uir-vim'
 call vundle#end()
 filetype plugin indent on
 filetype on
@@ -91,7 +92,8 @@ set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 set smartcase
 set tabstop=2
 set termencoding=utf-8
-set timeoutlen=50
+set timeoutlen=100
+set ttimeoutlen=0
 set viminfo='20,\"500
 set window=29
 
