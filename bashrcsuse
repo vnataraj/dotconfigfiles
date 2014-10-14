@@ -5,6 +5,12 @@ alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars 
 alias please='sudo !!'
 export PATH=$PATH:~/bin
 alias cfg="cd ~/dotconfigfiles/"
+alias list=' ls; tmux list-sessions '
+alias att='tmux attach-session -t '
+alias new='tmux new-session -s '
+alias ks='tmux kill-session -t '
+
+>>>>>>> Stashed changes
 
 d=.dircolors
 test -r $d && eval "$(dircolors $d)"
