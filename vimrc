@@ -17,7 +17,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'https://github.com/eraserhd/vim-ios/'
+"Plugin 'https://github.com/eraserhd/vim-ios/'
 Plugin 'lervag/vim-latex'
 Bundle "pangloss/vim-javascript"
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
