@@ -7,7 +7,7 @@ alias soa="cd ~/Documents/CS/end-to-end-soa/"
 alias cs="cd ~/Documents/CS/"
 alias resume="cd ~/Documents/CS/resume"
 alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first '
-alias mvm="cd ~/Documents/CS/research/"
+alias mvm="cd ~/Documents/CS/microvm/"
 alias list=' ls; tmux list-sessions '
 alias att='tmux attach-session -t '
 alias new='tmux new-session -s '
