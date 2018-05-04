@@ -7,7 +7,7 @@ else
 fi
 
 if [ $os == "darwin" ]; then
-	files="bashrcmac vimrc profile tmux.conf bash_profile"
+	files="bashrcmac vimrc profile tmux.conf bash_profile dircolors"
 elif [ $os == "linux" ]; then
 	files="bashrcsuse vimrc tmux.conf bash_profile"
 elif [ $os == "linux-gnu" ]; then

@@ -1,21 +1,44 @@
-alias pod2-4="sshfs vnataraj@pod2-4.cs.purdue.edu:/u/u87/vnataraj/ ~/Documents/www"
-alias sftp2pod="sftp vnataraj@pod2-4.cs.purdue.edu"
 alias please="sudo !!"
 alias dot="cd ~/Documents/CS/dotconfigfiles"
-alias website="cd ~/Documents/CS/vnataraj.github.io"
-alias soa="cd ~/Documents/CS/end-to-end-soa/"
+alias website="cd ~/Documents/CS/website"
+alias palate="cd ~/Documents/CS/palate"
 alias cs="cd ~/Documents/CS/"
 alias resume="cd ~/Documents/CS/resume"
-alias ls=' gls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first '
+alias ls=' gls --classify --tabsize=0 --literal --color=always --show-control-chars --human-readable --group-directories-first '
 alias mvm="cd ~/Documents/CS/microvm/"
 alias list=' ls; tmux list-sessions '
 alias att='tmux attach-session -t '
 alias new='tmux new-session -s '
 alias ks='tmux kill-session -t '
 
-export PATH=/usr/local/bin:~/bin:/usr/texbin:$PATH
+export PATH=~/bin:/usr/texbin:$PATH
 export CLICOLOR=1
 export JAVA_HOME=$(/usr/libexec/java_home)
+export SPARK_VERSION=2.2.0
+export SPARK_HOME="/usr/local/Cellar/apache-spark/$SPARK_VERSION/libexec/"
 
 d=.dircolors
 test -r $d && eval "$(gdircolors $d)"
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='[\u@\h \W$(__git_ps1)]\$ '
+
+source ~/.shell_prompt.sh
+#function _update_ps1() {
+#    PS1="$(~/.powerline-shell.py --cwd-mode dironly $? 2> /dev/null)"
+#}
+
+#if [ "$TERM" != "linux" ]; then
+#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#fi
+
+alias portal='docker run -v /Users/vipul/Documents/CS/palate/portal:/opt/portal --publish=8001:8000 -t portal:latest'
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash

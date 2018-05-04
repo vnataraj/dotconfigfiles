@@ -7,23 +7,21 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'https://github.com/eraserhd/vim-ios/'
 Plugin 'lervag/vim-latex'
 Bundle "pangloss/vim-javascript"
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'edkolev/promptline.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'Keithbsmiley/swift.vim'
-Plugin 'microvm/uir-vim'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rizzatti/dash.vim'
 call vundle#end()
 filetype plugin indent on
 filetype on
@@ -31,10 +29,12 @@ filetype on
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:promptline_theme = 'solarized'
 let g:airline_theme = 'wombat'
 set laststatus=2
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -96,7 +96,7 @@ set timeoutlen=100
 set ttimeoutlen=0
 set viminfo='20,\"500
 set window=29
-
+set clipboard=unnamed
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
