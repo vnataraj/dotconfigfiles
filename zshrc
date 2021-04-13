@@ -9,19 +9,6 @@ if type brew &>/dev/null; then
     compinit
 fi
 
-##
-# Git Branch Info
-##
-
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-#RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%b'
-
-
 ## 
 # ZPLUG
 ##
@@ -71,6 +58,7 @@ zinit light sindresorhus/pure
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+PURE_GIT_UNTRACKED_DIRTY=0
 
 ##
 # Shell Options (global)
@@ -96,14 +84,18 @@ alias please='sudo !!'
 ##
 # local options (checks for files in the format zsh.<file_type>.lcl, otherwise creates them)
 ##
-
+if [[ -z "$LOCAL_PREFS_DIR" ]]; then
+  dir=$HOME
+else 
+  dir=$LOCAL_PREFS_DIR
+fi
 TYPES=('opts' 'envvars' 'aliases' 'plugins')
 for t in $TYPES
 do
-  if [ ! -f "$HOME/zsh.$t.lcl" ]; then
-    touch "$HOME/zsh.$t.lcl"
+  if [ ! -f "$dir/zsh.$t.lcl" ]; then
+    touch "$dir/zsh.$t.lcl"
   else
-    source "$HOME/zsh.$t.lcl"
+    source "$dir/zsh.$t.lcl"
   fi
 done
 
