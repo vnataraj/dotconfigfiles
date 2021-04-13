@@ -7,8 +7,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
@@ -16,30 +14,44 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'lervag/vim-latex'
 Bundle "pangloss/vim-javascript"
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'tpope/vim-fugitive'
+Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'edkolev/promptline.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-endwise'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rizzatti/dash.vim'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 filetype plugin indent on
 filetype on
-"airline stuff
+"line stuff
 set noshowmode
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:promptline_theme = 'solarized'
-let g:airline_theme = 'wombat'
 set laststatus=2
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+"promptline stuff
+let g:promptline_preset = {
+  \'a' : ['%m', '%n'],
+  \'z' : [promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
+  \'c' : ['%~'],
+  \'warn' : [promptline#slices#last_exit_code()]}
+let g:promptline_powerline_symbols = 0
+let g:promptline_symbols = {
+    \ 'left'       : '',
+    \ 'left_alt'   : '>',
+    \ 'dir_sep'    : ' / ',
+    \ 'truncation' : '...',
+    \ 'vcs_branch' : '',
+    \ 'space'      : ' '}
+
 "ctrlp stuff
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -51,6 +63,15 @@ let g:tmuxline_preset = {
   \'x'      : '%a',
   \'y'      : '#W %R',
   \'z'      : '#H'}
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '>',
+    \ 'right' : '',
+    \ 'right_alt' : '<',
+    \ 'space' : ' '}
+"latex stuff
+let g:livepreview_previewer = 'open -a Preview'
 "clipboard stuff
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
