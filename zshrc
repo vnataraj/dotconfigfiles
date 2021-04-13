@@ -1,3 +1,17 @@
+######
+## ZSH config file
+## author: @vnataraj (Vipul Nataraj)
+## 
+## Env Scoped Variables (assumed):
+## $PATH
+## $HOME
+## 
+## Newly declared Env Vars (optional)
+## $LOCAL_PREFS_DIR - used for parent location for local preference files.  If already exists, will check for existing local preferences.  Othwrwise, defaults to $HOME
+##
+######
+
+
 ##
 # Git Autocomplete
 ##
