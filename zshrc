@@ -63,8 +63,7 @@ zinit light xorkevin/code-review-zsh
 zinit light mattmc3/zsh-safe-rm
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-autosuggestions
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 ##
 # Plugin Prefs (Zinit)
@@ -112,4 +111,6 @@ do
     source "$dir/zsh.$t.lcl"
   fi
 done
+
+source ~/.p10k.zsh
 
