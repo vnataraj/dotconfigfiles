@@ -1,27 +1,35 @@
 set nocompatible
 filetype on
 filetype off
-"Vundle stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'lervag/vim-latex'
-Bundle "pangloss/vim-javascript"
-Plugin 'tpope/vim-fugitive'
-Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'edkolev/promptline.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'tpope/vim-endwise'
-Plugin 'rizzatti/dash.vim'
-Plugin 'itchyny/lightline.vim'
-call vundle#end()
+" Vim Plug Stuff
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+Plug 'edkolev/tmuxline.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'lervag/vim-latex'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'edkolev/promptline.vim'
+Plug 'mattn/gist-vim'
+Plug 'tpope/vim-endwise'
+Plug 'rizzatti/dash.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'ajmwagar/vim-deus'
+call plug#end()
+" End Vim Plug Definition Block, Start Post-Install Hooks
+function! Installjshint(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm install -g jshint
+  endif
+endfunction
+Plug 'scrooloose/syntastic', { 'do': function('Installjshint') }
+" End Vim Plug Stuff
 filetype plugin indent on
 filetype on
 "line stuff
@@ -86,7 +94,7 @@ set cindent
 set background=dark
 set number
 syntax enable
-colorscheme jellybeans
+colors deus
 set backspace=2 shiftwidth=2
 set expandtab
 set t_Co=256
@@ -125,7 +133,7 @@ set wildignore+=*.swp,*~,._*
 
 "" highlight brackets
 hi MatchParen cterm=bold ctermbg=darkmagenta ctermfg=white
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
+set guifont=Monaco\ for\ Powerline\ 12
 
 runtime! macros/matchit.vim
 ""OSX stuff  
